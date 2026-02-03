@@ -5,6 +5,7 @@ resource "aws_instance" "private-instance" {
   key_name               = var.key_name
   subnet_id              = element(var.private-subnet, count.index)
   vpc_security_group_ids = ["${var.sg_id}"]
+  depends_on             = [var.nat_gw]
   tags = {
     Name        = "${var.vpc_name}-private-Server-${count.index + 1}"
     environment = var.environment

@@ -6,3 +6,4 @@ variable "vpc_name" {}
 variable "public-subnet" {}
 variable "sg_id" {}
 variable "private-subnet" {}
+variable "nat_gw" {}
